@@ -24,23 +24,30 @@ public class GasManager {
 
 		//Pide el saldo
 		do {
-			saldo = Double.parseDouble(JOptionPane.showInputDialog("Introduza  saldo mayor 20€"));
+			saldo = Double.parseDouble(JOptionPane.showInputDialog("Introduza  saldo mayor 20â‚¬"));
 		}
 
 		while (saldo <= 20);
-
+		
 		//Pide la tarifa, 1 o 2
+		do {
+			
 			tipoTarifa = Integer.parseInt(JOptionPane.showInputDialog("Introduza el tipo tarifa"));
+		}
+
+		while (tipoTarifa < 1 || tipoTarifa > 2);
+
+		
 		
 		
 
 		//Se crea el cliente
 		claseGasCliente cliente1 = new claseGasCliente(nombreUsuario, saldo, tipoTarifa);
 
-		//Menú
+		//MenÃº
 		do {
 			opcion = JOptionPane.showInputDialog(
-					"1)Introducir recarga \n 2)Introducir gas gastado \n 3)Obtener saldo \n 4)Obtener datos totales \n 5)obtener factura \n 6)Obtener gráfica \n 7)s= salir")
+					"1)Introducir recarga \n 2)Introducir gas gastado \n 3)Obtener saldo \n 4)Obtener datos totales \n 5)obtener factura \n 6)Obtener grÃ¡fica \n 7)s= salir")
 					.charAt(0);
 
 			switch (opcion) {
